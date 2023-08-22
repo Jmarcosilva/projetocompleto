@@ -1,0 +1,51 @@
+package com.projeto.backend2.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.project.backend.model.User;
+import com.projeto.backend2.model.Usuario;
+import com.projeto.backend2.repository.UsuarioRepository;
+
+@Service
+public class UsuarioServiceImpl implements UsuarioService{
+
+	@Autowired
+	public UsuarioRepository usuarioRepository;
+	
+	@Override
+	public Usuario createUsuario(Usuario usuario) {
+		return usuarioRepository.save(usuario);
+	}
+
+	@Override
+	public List<Usuario> getUsuario() {
+		return (List<Usuario>) usuarioRepository.findAll();
+	}
+
+	@Override
+	public Usuario getUsuarioById(long id) {
+		 return usuarioRepository.findById(id).get();
+	}
+
+	@Override
+	public void deleteUsuario(long id) {
+		usuarioRepository.deleteById(id);
+		
+	}
+
+	@Override
+	public Usuario updateUser(Usuario usuario, long id) {
+		 Usuario user1 = usuarioRepository.findById(id).get();
+		 user1.setName(usuario.getName());
+		 user1.setEmail(usuario.getEmail());
+		 user1.setpNo(usuario.getpNo());
+		 user1.setAddress(usuario.getAddress());
+		 
+		 
+		 return usuarioRepository.save(user1);
+	}
+
+}

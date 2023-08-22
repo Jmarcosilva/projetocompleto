@@ -1,0 +1,5 @@
+package com.projeto.backend2.service;
+
+public class UsuarioServiceImpl {
+
+}

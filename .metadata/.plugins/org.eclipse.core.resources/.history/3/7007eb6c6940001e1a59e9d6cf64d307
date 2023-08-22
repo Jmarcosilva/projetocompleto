@@ -1,0 +1,29 @@
+package com.projeto.backend2.service;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.projeto.backend2.model.Usuario;
+
+@Service
+public interface UsuarioService {
+	//create user
+		public Usuario createUsuario(Usuario usuario);
+		
+		
+		//read users - Listar
+		public List<Usuario> getUsuario();
+		
+		//read users by id - Listar pelo id
+		public Usuario getUsuarioById(long id);
+		
+		//delete user by id
+		public void  deleteUsuario(long id);
+		
+		
+		//update user by id
+		public Usuario updateUsuario(Usuario usuario, long id);
+		
+	}
+

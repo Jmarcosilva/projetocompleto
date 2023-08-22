@@ -1,0 +1,5 @@
+package com.projeto.backend2.controller;
+
+public class UsuarioController {
+
+}
