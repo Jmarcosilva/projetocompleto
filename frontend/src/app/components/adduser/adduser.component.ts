@@ -21,13 +21,18 @@ export class AdduserComponent implements OnInit {
   })
   ngOnInit(): void {
   }
+
   submit(){
     this.data = this.form.value
     console.log(this.data)
-
+    
     this.service.adduser(this.data).subscribe(data => {
       console.log(data)
     })
     this.router.navigate(['/']);
+
+    setTimeout(()=>{
+      window.location.reload();
+    }, 100);
   }
 }

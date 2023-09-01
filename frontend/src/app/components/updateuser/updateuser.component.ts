@@ -40,6 +40,10 @@ export class UpdateuserComponent implements OnInit {
     })
 
     this.router.navigate(['/']);
+
+    setTimeout(()=>{
+      window.location.reload();
+    }, 100);
   }
 
 }
